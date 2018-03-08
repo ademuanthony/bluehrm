@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoftBreeze.BlueHrm</RootNamespace>
+    <AssemblyName>SoftBreeze.BlueHrm.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.7.4.1\lib\net451\Abp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.EntityFramework, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.EntityFramework.0.7.4.1\lib\net451\Abp.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.4.0\lib\net451\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.EntityFramework, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.EntityFramework.0.7.4.0\lib\net451\Abp.Zero.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicFilters, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicFilters.1.4.3\lib\net40\EntityFramework.DynamicFilters.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityFramework\BlueHrmDbContext.cs" />
+    <Compile Include="EntityFramework\Repositories\BlueHrmRepositoryBase.cs" />
+    <Compile Include="EntityFramework\Repositories\JobConfiguration\EmploymentStatusRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\JobConfiguration\JobCategoryRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\JobConfiguration\JobRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\JobConfiguration\JobTerminationReasonRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\JobConfiguration\PayGradeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeaveEntitlmentRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeavePeriodRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeaveRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeaveRequestCommentRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeaveRequestRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\LeaveModule\LeaveTypeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Organisation\GeneralInformationRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Organisation\LocationRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Performacnes\ConcludingRemarkRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Performacnes\PerformanceIndicatorRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Performacnes\KeyResultAreaRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Performacnes\PerformanceEvaluationPeriodRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\Performacnes\StaffPerformanceRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\ContactRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\DependantRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EducationRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeAttachementRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeEmergencyContactRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeLanguageRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeMembershipRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\EmployeeSkillRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\ImmigrationRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\JobExperienceRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\JobInformationRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\LicenseRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\SalaryRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\PersonalInforation\SupervisorRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\CountyRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\CurrencyRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\EducationalLevelRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\LanguageRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\LicenseTypeRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\MembershipRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\Payrol\SalaryComponentRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\Payrol\SalaryPayFrequencyRespository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\SkillRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\SystemConfiguration\UnitRepository.cs" />
+    <Compile Include="BlueHrmDataModule.cs" />
+    <Compile Include="EntityFramework\Repositories\TimeModule\AttendanceRepository.cs" />
+    <Compile Include="Migrations\201602081444282_HrmFirst.cs" />
+    <Compile Include="Migrations\201602081444282_HrmFirst.Designer.cs">
+      <DependentUpon>201602081444282_HrmFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602090509202_EmployeeDateToNullable.cs" />
+    <Compile Include="Migrations\201602090509202_EmployeeDateToNullable.Designer.cs">
+      <DependentUpon>201602090509202_EmployeeDateToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602090536255_EmployeeToUserDrop.cs" />
+    <Compile Include="Migrations\201602090536255_EmployeeToUserDrop.Designer.cs">
+      <DependentUpon>201602090536255_EmployeeToUserDrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602090540219_EmployeeToUserAdd.cs" />
+    <Compile Include="Migrations\201602090540219_EmployeeToUserAdd.Designer.cs">
+      <DependentUpon>201602090540219_EmployeeToUserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602090542356_EmployeeDateEmployedToNullable.cs" />
+    <Compile Include="Migrations\201602090542356_EmployeeDateEmployedToNullable.Designer.cs">
+      <DependentUpon>201602090542356_EmployeeDateEmployedToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602101620550_ImmigrationCorrection.cs" />
+    <Compile Include="Migrations\201602101620550_ImmigrationCorrection.Designer.cs">
+      <DependentUpon>201602101620550_ImmigrationCorrection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602102059489_NullDateImmigration.cs" />
+    <Compile Include="Migrations\201602102059489_NullDateImmigration.Designer.cs">
+      <DependentUpon>201602102059489_NullDateImmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602110414179_Country.cs" />
+    <Compile Include="Migrations\201602110414179_Country.Designer.cs">
+      <DependentUpon>201602110414179_Country.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602110649391_CurrentCode.cs" />
+    <Compile Include="Migrations\201602110649391_CurrentCode.Designer.cs">
+      <DependentUpon>201602110649391_CurrentCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602110726094_Pending.cs" />
+    <Compile Include="Migrations\201602110726094_Pending.Designer.cs">
+      <DependentUpon>201602110726094_Pending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602111353023_SupervisorConfig.cs" />
+    <Compile Include="Migrations\201602111353023_SupervisorConfig.Designer.cs">
+      <DependentUpon>201602111353023_SupervisorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602120625554_DropEmployeeFullname.cs" />
+    <Compile Include="Migrations\201602120625554_DropEmployeeFullname.Designer.cs">
+      <DependentUpon>201602120625554_DropEmployeeFullname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602120831180_educationLevel.cs" />
+    <Compile Include="Migrations\201602120831180_educationLevel.Designer.cs">
+      <DependentUpon>201602120831180_educationLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602120943382_EmployeeMembershipEdit.cs" />
+    <Compile Include="Migrations\201602120943382_EmployeeMembershipEdit.Designer.cs">
+      <DependentUpon>201602120943382_EmployeeMembershipEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602140259524_Leave.cs" />
+    <Compile Include="Migrations\201602140259524_Leave.Designer.cs">
+      <DependentUpon>201602140259524_Leave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602150924425_LeaveEntitlement.cs" />
+    <Compile Include="Migrations\201602150924425_LeaveEntitlement.Designer.cs">
+      <DependentUpon>201602150924425_LeaveEntitlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160622307_LEaveUPdate.cs" />
+    <Compile Include="Migrations\201602160622307_LEaveUPdate.Designer.cs">
+      <DependentUpon>201602160622307_LEaveUPdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602170056244_Attendance.cs" />
+    <Compile Include="Migrations\201602170056244_Attendance.Designer.cs">
+      <DependentUpon>201602170056244_Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602241628296_LeaveRequestMap.cs" />
+    <Compile Include="Migrations\201602241628296_LeaveRequestMap.Designer.cs">
+      <DependentUpon>201602241628296_LeaveRequestMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602270735531_performance.cs" />
+    <Compile Include="Migrations\201602270735531_performance.Designer.cs">
+      <DependentUpon>201602270735531_performance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602271157551_PerformanceEvaluationStatus.cs" />
+    <Compile Include="Migrations\201602271157551_PerformanceEvaluationStatus.Designer.cs">
+      <DependentUpon>201602271157551_PerformanceEvaluationStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602281206326_All.cs" />
+    <Compile Include="Migrations\201602281206326_All.Designer.cs">
+      <DependentUpon>201602281206326_All.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602281334496_All1.cs" />
+    <Compile Include="Migrations\201602281334496_All1.Designer.cs">
+      <DependentUpon>201602281334496_All1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Seed\DefaultEditionCreator.cs" />
+    <Compile Include="Migrations\Seed\DefaultLanguagesCreator.cs" />
+    <Compile Include="Migrations\Seed\DefaultSettingsCreator.cs" />
+    <Compile Include="Migrations\Seed\DefaultTenantRoleAndUserCreator.cs" />
+    <Compile Include="Migrations\Seed\HrmSeed.cs" />
+    <Compile Include="Migrations\Seed\InitialDbBuilder.cs" />
+    <Compile Include="Migrations\Seed\InitialPeopleCreator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tony\Common\Tony.Common.Infrastructure\Tony.Common.Infrastructure.csproj">
+      <Project>{36fb9991-5907-4927-8eac-3c4a0446777d}</Project>
+      <Name>Tony.Common.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftBreeze.BlueHrm.Core\SoftBreeze.BlueHrm.Core.csproj">
+      <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
+      <Name>SoftBreeze.BlueHrm.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602081444282_HrmFirst.resx">
+      <DependentUpon>201602081444282_HrmFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602090509202_EmployeeDateToNullable.resx">
+      <DependentUpon>201602090509202_EmployeeDateToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602090536255_EmployeeToUserDrop.resx">
+      <DependentUpon>201602090536255_EmployeeToUserDrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602090540219_EmployeeToUserAdd.resx">
+      <DependentUpon>201602090540219_EmployeeToUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602090542356_EmployeeDateEmployedToNullable.resx">
+      <DependentUpon>201602090542356_EmployeeDateEmployedToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602101620550_ImmigrationCorrection.resx">
+      <DependentUpon>201602101620550_ImmigrationCorrection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602102059489_NullDateImmigration.resx">
+      <DependentUpon>201602102059489_NullDateImmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602110414179_Country.resx">
+      <DependentUpon>201602110414179_Country.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602110649391_CurrentCode.resx">
+      <DependentUpon>201602110649391_CurrentCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602110726094_Pending.resx">
+      <DependentUpon>201602110726094_Pending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602111353023_SupervisorConfig.resx">
+      <DependentUpon>201602111353023_SupervisorConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602120625554_DropEmployeeFullname.resx">
+      <DependentUpon>201602120625554_DropEmployeeFullname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602120831180_educationLevel.resx">
+      <DependentUpon>201602120831180_educationLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602120943382_EmployeeMembershipEdit.resx">
+      <DependentUpon>201602120943382_EmployeeMembershipEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602140259524_Leave.resx">
+      <DependentUpon>201602140259524_Leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602150924425_LeaveEntitlement.resx">
+      <DependentUpon>201602150924425_LeaveEntitlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160622307_LEaveUPdate.resx">
+      <DependentUpon>201602160622307_LEaveUPdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602170056244_Attendance.resx">
+      <DependentUpon>201602170056244_Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241628296_LeaveRequestMap.resx">
+      <DependentUpon>201602241628296_LeaveRequestMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602270735531_performance.resx">
+      <DependentUpon>201602270735531_performance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602271157551_PerformanceEvaluationStatus.resx">
+      <DependentUpon>201602271157551_PerformanceEvaluationStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602281206326_All.resx">
+      <DependentUpon>201602281206326_All.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602281334496_All1.resx">
+      <DependentUpon>201602281334496_All1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

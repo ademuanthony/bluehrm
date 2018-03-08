@@ -1,0 +1,92 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Timing.Attendance;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Time/Views/Attendance/Index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Time/Views/Attendance/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Time/Views/Attendance/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Attendance")</span> <small>@L("AttendanceHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @if (!string.IsNullOrEmpty(ViewBag.EmployeeNumber))
+        {
+            <button id="PunchInButton" class="btn btn-primary blue"><i class="fa fa-arrow-circle-left"></i> @L("PunchIn")</button>
+            <button id="PunchOutButton" class="btn btn-primary red"><i class="fa fa-arrow-circle-right"></i> @L("PunchOut")</button>
+
+        }
+        
+
+        @if (IsGranted(AppPermissions.Pages_Timing_Attendance_Create))
+        {
+            <button id="CreateButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("NewEntry")</button>
+        }
+    </div>
+</div>
+<div class="portlet light">
+    <div class="portlet-body">
+
+        <div class="row">
+
+            <form id="LoadAttendanceForm">
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control datepicker" type="text" name="StartDate" required>
+                        <label>@L("From")</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control datepicker" type="text" name="EndDate" required>
+                        <label>@L("To")</label>
+                    </div>
+                </div>
+
+                @if (IsGranted(AppPermissions.Pages_Timing_Attendances_ViewAll))
+                {
+
+                    <div class="col-md-3">
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <input class="form-control" type="text" name="EmployeeNumber" required>
+                            <label>@L("EmployeeNumber")</label>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <input type="hidden" name="EmployeeNumber" value="@ViewBag.EmployeeNumber">
+
+                }
+
+                <div class="col-md-3">
+                    <button style="margin-top: 15px;" id="LoadButton" class="btn btn-default green">
+                        <i class="fa fa-search"></i> @L("Load")
+                    </button>
+                </div>
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+    <div class="portlet-body">
+        <div id="AttendanceTable"></div>
+    </div>
+</div>

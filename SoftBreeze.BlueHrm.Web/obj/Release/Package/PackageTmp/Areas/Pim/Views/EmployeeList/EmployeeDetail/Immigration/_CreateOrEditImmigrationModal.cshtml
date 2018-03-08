@@ -1,0 +1,103 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Pim.Models.CreateOrEditImmigrationModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditImmigration") + ": " + Model.Immigration.Number)
+    : L("NewImmigration")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#JobInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("Immigration")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobInformationsTab">
+
+                <form name="ImmigrationDataformationsForm" role="form" novalidate class="form-validation">
+                    <input type="hidden" name="EmployeeId" value="@ViewBag.EmployeeId"/>
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Immigration.Id"/>
+                    }
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control@(Model.Immigration.Number.IsNullOrEmpty() ? "" : " edited")"
+                                       type="text" name="Number" value="@Model.Immigration.Number" required="">
+                                <label>@L("Number")</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <select name="Document" class="form-control edited">
+                                    <option value="@ImmigrationDocument.Passport" @(Model.Immigration.Document == ImmigrationDocument.Passport ? "selected" : "")>Passport</option>
+                                    <option value="@ImmigrationDocument.Visa" @(Model.Immigration.Document == ImmigrationDocument.Visa ? "selected" : "")>Visa</option>
+                                </select>
+                                <label>@L("Document")</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control edited"
+                                       type="date" name="IssueDate" 
+                                       value="@(Model.Immigration.IssueDate.HasValue?Model.Immigration.IssueDate.Value.ToShortDateString():"")">
+                                <label>@L("IssueDate")</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control edited"
+                                       type="date" name="ExpiryDate" 
+                                       value="@(Model.Immigration.ExpiryDate.HasValue?Model.Immigration.ExpiryDate.Value.ToShortDateString():"")">
+                                <label>@L("ExpiryDate")</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control edited"
+                                       type="text" name="EligibleStatus" value="@Model.Immigration.EligibleStatus">
+                                <label>@L("EligibleStatus")</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control edited"
+                                       type="date" name="EligibleReviewDate" 
+                                       value="@(Model.Immigration.EligibleReviewDate.HasValue?Model.Immigration.EligibleReviewDate.Value.ToShortDateString():"")">
+                                <label>@L("EligibleReviewDate")</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <textarea name="Comment" class="form-control edited">@Model.Immigration.Comment</textarea> 
+                        <label>@L("Comment")</label>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

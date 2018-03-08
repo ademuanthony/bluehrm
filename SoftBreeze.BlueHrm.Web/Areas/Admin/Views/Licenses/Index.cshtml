@@ -1,0 +1,38 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Admin.Qualification.Licenses;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Admin/Views/Licenses/Index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Admin/Views/Common/_PermissionTree.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/Licenses/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/Licenses/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Licenses")</span> <small>@L("LicensesHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @if (IsGranted(AppPermissions.Pages_Administration_Qualification_License_Create))
+        {
+            <button id="CreateNewLicenseButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("CreateLicense")</button>
+        }
+    </div>
+</div>
+<div class="portlet light">
+    <div class="portlet-body">
+        <div id="LicensesTable"></div>
+    </div>
+</div>

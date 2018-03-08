@@ -1,0 +1,43 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Performance.Models.CreateOrEditKeyResultAreaAttributeModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditKPI"))
+    : L("CreateKPI")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#KeyResultAreasInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("KeyResultAreas")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="KeyResultAreasInformationsTab">
+
+                <form name="AttributeForm" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Attribute.Id" />
+                    }
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.Attribute.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.Attribute.Name">
+                        <label>@L("KPI")</label>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

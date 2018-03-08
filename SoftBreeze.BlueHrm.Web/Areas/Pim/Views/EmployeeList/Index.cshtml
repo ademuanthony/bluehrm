@@ -1,0 +1,57 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Pim.EmployeeList;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Pim/Views/EmployeeList/index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Pim/Views/EmployeeList/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Pim/Views/EmployeeList/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("EmployeeList")</span> <small>@L("EmployeeListHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @*<button id="ExportEmployeeListToExcelButton" class="btn btn-default"><i class="fa fa-file-excel-o"></i> @L("ExportToExcel")</button>*@
+        <button id="PrintEmpleeListButton" class="btn btn-default"><i class="fa fa-print"></i> @L("Print")</button>
+        @if (IsGranted(AppPermissions.Pages_Pim_Eployee_Create))
+        {
+            <button id="CreateNewEmployeeButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("CreateEmployee")</button>
+        }
+    </div>
+</div>
+
+<div class="portlet light">
+    @if (IsGranted(AppPermissions.Pages_Pim_Eployee_Create))
+    {
+        <div class="portlet-title portlet-title-filter">
+            <div class="inputs inputs-full-width">
+                <div class="portlet-input">
+                    <form>
+                        <div class="input-group">
+                            <input id="EmployeeListTableFilter" class="form-control" placeholder="@L("SearchWithThreeDot")" type="text">
+                            <span class="input-group-btn">
+                            <button id="GetEmployeeListButton" class="btn default" type="submit"><i class="icon-magnifier"></i></button>
+                        </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="portlet-body">
+        <div id="EmployeeListTable"></div>
+    </div>
+</div>

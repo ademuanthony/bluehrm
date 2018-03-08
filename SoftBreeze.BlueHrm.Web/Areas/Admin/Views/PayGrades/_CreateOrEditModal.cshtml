@@ -1,0 +1,41 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.JobConfiguration.CreateOrEditPaygradeViewModel
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml", 
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditPayGrade") + ": " + Model.PayGrade.Name) : L("CreateNewPayGrade")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#PayGradeInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("PaygradeInformation")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="PayGradeInformationsTab">
+
+                <form name="PaygradeInformationsForm" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.PayGrade.Id" />
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.PayGrade.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.PayGrade.Name">
+                        <label>@L("Name")</label>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

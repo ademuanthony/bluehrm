@@ -1,0 +1,42 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.Qualification.CreateOrEditLicenseTypeModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditLicense") + ": " + Model.LicenseType.Name) : L("CreateLicense")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#LicensesInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("LicenseInformation")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="LicensesInformationsTab">
+
+                <form name="LicensesInformationsForm" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.LicenseType.Id" />
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.LicenseType.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.LicenseType.Name">
+                        <label>@L("Name")</label>
+                    </div>
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

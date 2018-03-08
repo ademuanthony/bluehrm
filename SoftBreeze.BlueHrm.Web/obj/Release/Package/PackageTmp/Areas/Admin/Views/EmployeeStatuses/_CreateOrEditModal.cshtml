@@ -1,0 +1,35 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.JobConfiguration.CreateOrEditEmployeeStatusViewModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditEmployeeStatus") + ": " + Model.EmploymentStatus.Name) : L("CreateNewEmployeeStatus")))
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#EmployeeStatusInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("EmployeeStatusInformation")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="EmployeeStatusInformationsTab">
+                <form name="EmployeeStatusInformationsForm" role="form" novalidate class="form-validation">
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.EmploymentStatus.Id" />
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.EmploymentStatus.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.EmploymentStatus.Name">
+                        <label>@L("Name")</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

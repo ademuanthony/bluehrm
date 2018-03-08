@@ -1,0 +1,7 @@
+SoftBreeze.BlueHrm.Application/bin
+SoftBreeze.BlueHrm.Core/bin
+SoftBreeze.BlueHrm.EntityFramework/bin
+SoftBreeze.BlueHrm.Web/bin
+SoftBreeze.BlueHrm.WebApi/bin
+Tony/Common/Tony.Common.Infrastructure/bin
+packages

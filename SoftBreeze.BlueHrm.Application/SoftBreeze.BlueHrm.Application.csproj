@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDF5D964-4C0F-4F19-B674-58A38A5E5401}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoftBreeze.BlueHrm</RootNamespace>
+    <AssemblyName>SoftBreeze.BlueHrm.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Abp, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.0.7.4.1\lib\net451\Abp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.AutoMapper, Version=0.7.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.AutoMapper.0.7.4.1\lib\net451\Abp.AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.0.7.4.0\lib\net451\Abp.Zero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Abp.Zero.Ldap, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Abp.Zero.Ldap.0.7.4.0\lib\net451\Abp.Zero.Ldap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPPlus.4.0.4\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.0.34.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\AttachementDto.cs" />
+    <Compile Include="Dto\OutputBase.cs" />
+    <Compile Include="JobConfiguration\Dto\CreateOrUpdateJobTerminationReasonInput.cs" />
+    <Compile Include="JobConfiguration\Dto\EmploymentStatuses\CreateEmploymentStatusInput.cs" />
+    <Compile Include="JobConfiguration\Dto\EmploymentStatuses\CreateOrUpdateEmploymentStatusInput.cs" />
+    <Compile Include="JobConfiguration\Dto\EmploymentStatuses\DeleteEmploymentStatusInput.cs" />
+    <Compile Include="JobConfiguration\Dto\EmploymentStatuses\EmploymentStatusesDto.cs" />
+    <Compile Include="JobConfiguration\Dto\EmploymentStatuses\GetEmploymentStatusInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobCategories\CreateJobCategoryInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobCategories\CreateOrUpdateJobCategoryInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobCategories\DeleteJobCategoryInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobCategories\GetJobCategoryInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobCategories\JobCategoryDto.cs" />
+    <Compile Include="JobConfiguration\Dto\Jobs\CreateJobInput.cs" />
+    <Compile Include="JobConfiguration\Dto\Jobs\CreateOrUpdateJobInput.cs" />
+    <Compile Include="JobConfiguration\Dto\Jobs\DeleteJobInput.cs" />
+    <Compile Include="JobConfiguration\Dto\Jobs\GetJobInput.cs" />
+    <Compile Include="JobConfiguration\Dto\Jobs\JobDto.cs" />
+    <Compile Include="JobConfiguration\Dto\JobTerminationReasons\CreateJobTerminationReasonInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobTerminationReasons\DeleteJobTerminationReasonInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobTerminationReasons\GetJobTerminationReasonInput.cs" />
+    <Compile Include="JobConfiguration\Dto\JobTerminationReasons\JobTerminationReasonDto.cs" />
+    <Compile Include="JobConfiguration\Dto\PayGrades\CreateOrUpdatePaygradeInput.cs" />
+    <Compile Include="JobConfiguration\Dto\PayGrades\CreatePayGradeInput.cs" />
+    <Compile Include="JobConfiguration\Dto\PayGrades\DeletePayGradeInput.cs" />
+    <Compile Include="JobConfiguration\Dto\PayGrades\GetPayGradeInput.cs" />
+    <Compile Include="JobConfiguration\Dto\PayGrades\PayGradeDto.cs" />
+    <Compile Include="JobConfiguration\IJobConfigurationService.cs" />
+    <Compile Include="JobConfiguration\JobConfigurationService.cs" />
+    <Compile Include="LeaveModule\Dto\AssignLeaveInput.cs" />
+    <Compile Include="LeaveModule\Dto\DeleteLeaveInput.cs" />
+    <Compile Include="LeaveModule\Dto\GetLeaveDoInput.cs" />
+    <Compile Include="LeaveModule\Dto\GetLeavesInput.cs" />
+    <Compile Include="LeaveModule\Dto\LeaveDto.cs" />
+    <Compile Include="LeaveModule\Dto\LeaveEntitlementDto.cs" />
+    <Compile Include="LeaveModule\Dto\LeavePeriodDto.cs" />
+    <Compile Include="LeaveModule\Dto\LeaveRequestDto.cs" />
+    <Compile Include="LeaveModule\Dto\LeaveTypeDto.cs" />
+    <Compile Include="LeaveModule\ILeaveService.cs" />
+    <Compile Include="LeaveModule\LeaveService.cs" />
+    <Compile Include="Organisation\Dto\Locations\CreateLocationInput.cs" />
+    <Compile Include="Organisation\Dto\Locations\CreateOrUpdateLocationInput.cs" />
+    <Compile Include="Organisation\Dto\Locations\DeleteLocationInput.cs" />
+    <Compile Include="Organisation\Dto\Locations\GetLocationInput.cs" />
+    <Compile Include="Organisation\Dto\Locations\LocationDto.cs" />
+    <Compile Include="Organisation\Dto\GeneralInformations\SaveGerneralInformationInput.cs" />
+    <Compile Include="Organisation\Dto\GeneralInformations\GeneralInformationDto.cs" />
+    <Compile Include="Organisation\Dto\Locations\UpdateLocationInput.cs" />
+    <Compile Include="Organisation\Dto\Units\CreateOrUpdateUnitInput.cs" />
+    <Compile Include="Organisation\Dto\Units\CreateUnitInput.cs" />
+    <Compile Include="Organisation\Dto\Units\DeleteUnitInput.cs" />
+    <Compile Include="Organisation\Dto\Units\GetUnitInput.cs" />
+    <Compile Include="Organisation\Dto\Units\UnitDto.cs" />
+    <Compile Include="Organisation\Dto\Units\UpdateUnitInput.cs" />
+    <Compile Include="Organisation\IOrganisationService.cs" />
+    <Compile Include="Organisation\OrganisationService.cs" />
+    <Compile Include="People\Dto\AddPhoneInput.cs" />
+    <Compile Include="People\Dto\CreatePersonInput.cs" />
+    <Compile Include="People\Dto\GetPeopleInput.cs" />
+    <Compile Include="People\Dto\PhoneInPersonListDto.cs" />
+    <Compile Include="People\IPersonAppService.cs" />
+    <Compile Include="People\PersonAppService.cs" />
+    <Compile Include="People\Dto\PersonListDto.cs" />
+    <Compile Include="BlueHrmApplicationModule.cs" />
+    <Compile Include="BlueHrmAppServiceBase.cs" />
+    <Compile Include="AppConsts.cs" />
+    <Compile Include="Auditing\AuditLogAndUser.cs" />
+    <Compile Include="Auditing\Dto\AuditLogListDto.cs" />
+    <Compile Include="Auditing\Dto\GetAuditLogsInput.cs" />
+    <Compile Include="Auditing\AuditLogAppService.cs" />
+    <Compile Include="Auditing\Exporting\AuditLogListExcelExporter.cs" />
+    <Compile Include="Auditing\Exporting\IAuditLogListExcelExporter.cs" />
+    <Compile Include="Auditing\IAuditLogAppService.cs" />
+    <Compile Include="Authorization\Dto\FlatPermissionDto.cs" />
+    <Compile Include="Authorization\Roles\Dto\GetRoleForEditOutput.cs" />
+    <Compile Include="Authorization\Roles\IRoleAppService.cs" />
+    <Compile Include="Authorization\PermissionManagerExtensions.cs" />
+    <Compile Include="Authorization\Roles\RoleAppService.cs" />
+    <Compile Include="Authorization\Roles\Dto\RoleListDto.cs" />
+    <Compile Include="Authorization\Roles\Dto\RoleEditDto.cs" />
+    <Compile Include="Authorization\Roles\Dto\CreateOrUpdateRoleInput.cs" />
+    <Compile Include="Common\CommonLookupAppService.cs" />
+    <Compile Include="Common\ICommonLookupAppService.cs" />
+    <Compile Include="Configuration\Tenants\Dto\LdapSettingsEditDto.cs" />
+    <Compile Include="DataExporting\Excel\EpPlus\EpPlusExcelExporterBase.cs" />
+    <Compile Include="Editions\Dto\CreateOrUpdateEditionDto.cs" />
+    <Compile Include="Editions\Dto\EditionEditDto.cs" />
+    <Compile Include="Editions\Dto\FlatFeatureDto.cs" />
+    <Compile Include="Editions\EditionAppService.cs" />
+    <Compile Include="Editions\Dto\EditionListDto.cs" />
+    <Compile Include="Editions\Dto\GetEditionForEditOutput.cs" />
+    <Compile Include="Editions\IEditionAppService.cs" />
+    <Compile Include="IAppFolders.cs" />
+    <Compile Include="Authorization\Users\Exporting\IUserListExcelExporter.cs" />
+    <Compile Include="Authorization\Users\Exporting\UserListExcelExporter.cs" />
+    <Compile Include="Dto\FileDto.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\ChangePasswordInput.cs" />
+    <Compile Include="Authorization\Users\Dto\CreateOrUpdateUserInput.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUsersInput.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUserForEditOutput.cs" />
+    <Compile Include="Authorization\Users\Profile\Dto\CurrentUserProfileEditDto.cs" />
+    <Compile Include="Authorization\Users\Dto\GetUserPermissionsForEditOutput.cs" />
+    <Compile Include="Configuration\Host\Dto\EmailSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\GeneralSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\HostSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\Dto\HostUserManagementSettingsEditDto.cs" />
+    <Compile Include="Configuration\Host\HostSettingsAppService.cs" />
+    <Compile Include="Configuration\Host\IHostSettingsAppService.cs" />
+    <Compile Include="Configuration\Tenants\ITenantSettingsAppService.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\Dto\TenantUserManagementSettingsEditDto.cs" />
+    <Compile Include="Configuration\Tenants\TenantSettingsAppService.cs" />
+    <Compile Include="Dto\PagedAndSortedInputDto.cs" />
+    <Compile Include="Authorization\Users\Profile\IProfileAppService.cs" />
+    <Compile Include="Authorization\Users\IUserAppService.cs" />
+    <Compile Include="Authorization\Users\Profile\ProfileAppService.cs" />
+    <Compile Include="Authorization\Users\Dto\UpdateUserPermissionsInput.cs" />
+    <Compile Include="Authorization\Users\UserAppService.cs" />
+    <Compile Include="Authorization\Users\Dto\UserListDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UserEditDto.cs" />
+    <Compile Include="Authorization\Users\Dto\UserRoleDto.cs" />
+    <Compile Include="CustomDtoMapper.cs" />
+    <Compile Include="Localization\Dto\CreateOrUpdateLanguageInput.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageEditDto.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageListDto.cs" />
+    <Compile Include="Localization\Dto\GetLanguagesOutput.cs" />
+    <Compile Include="Localization\Dto\GetLanguageForEditOutput.cs" />
+    <Compile Include="Localization\Dto\LanguageTextListDto.cs" />
+    <Compile Include="Localization\FamFamFamFlagsHelper.cs" />
+    <Compile Include="Localization\GetLanguageTextsInput.cs" />
+    <Compile Include="Localization\ILanguageAppService.cs" />
+    <Compile Include="Localization\LanguageAppService.cs" />
+    <Compile Include="Localization\Dto\SetDefaultLanguageInput.cs" />
+    <Compile Include="Localization\Dto\UpdateLanguageTextInput.cs" />
+    <Compile Include="MultiTenancy\Dto\CreateTenantInput.cs" />
+    <Compile Include="MultiTenancy\Dto\GetTenantsInput.cs" />
+    <Compile Include="MultiTenancy\Dto\GetTenantFeaturesForEditOutput.cs" />
+    <Compile Include="MultiTenancy\ITenantAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantListDto.cs" />
+    <Compile Include="MultiTenancy\TenantAppService.cs" />
+    <Compile Include="MultiTenancy\Dto\TenantEditDto.cs" />
+    <Compile Include="MultiTenancy\Dto\UpdateTenantFeaturesInput.cs" />
+    <Compile Include="Net\MimeTypes\MimeTypeNames.cs" />
+    <Compile Include="PersonalInformation\Dto\Contacts\ContactDto.cs" />
+    <Compile Include="PersonalInformation\Dto\Contacts\CreateContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Contacts\GetContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Contacts\SaveContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Contacts\UpdateContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\CreateDependantInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\DeleteDependantInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\DependantDto.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\GetDependantInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\GetDependantsInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Dependants\UpdateDependantInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\CreateEducationInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\DeleteEducationInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\EducationDto.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\GetEducationInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\GetEducationsInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Educations\UpdateEducationInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeAttachements\CreateEmployeeAttachementInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeAttachements\DeleteEmployeeAttachementInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeAttachements\EmployeeAttachementDto.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeAttachements\GetEmployeeAttachmentsInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\CreateEmployeeEmergencyContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\DeleteEmployeeEmergencyContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\EmployeeEmergencyContactDto.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\GetEmployeeEmergencyContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\GetEmployeeEmergencyContactsInput.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeEmergencyContacts\UpdateEmployeeEmergencyContactInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\CreateEmployeeInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\DeleteEmployeeInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\EmployeeDto.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\GetEmployeeByNumberInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\GetEmployeeInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\GetEmployeesInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Employees\UpdateEmployeeInput.cs" />
+    <Compile Include="PersonalInformation\Dto\Immigrations\ImmigrationDto.cs" />
+    <Compile Include="PersonalInformation\Dto\JobInfo\JobInformationDto.cs" />
+    <Compile Include="PersonalInformation\Dto\EmployeeMemberships\EmployeeMembershipDtp.cs" />
+    <Compile Include="PersonalInformation\Dto\Salaries\SalaryDto.cs" />
+    <Compile Include="PersonalInformation\Dto\Supervisor\SupervisorDto.cs" />
+    <Compile Include="PersonalInformation\EmployeeService.cs" />
+    <Compile Include="PersonalInformation\IEmployeeService.cs" />
+    <Compile Include="Proformances\Dto\PerformacneIndicatorDto.cs" />
+    <Compile Include="Proformances\Dto\KeyResultAreaDto.cs" />
+    <Compile Include="Proformances\Dto\PerformanceEvaluationPeriodDto.cs" />
+    <Compile Include="Proformances\Dto\StaffPerformanceDto.cs" />
+    <Compile Include="Proformances\IStaffPerformanceService.cs" />
+    <Compile Include="Proformances\StaffPerformanceService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemConfiguration\ConfigurationService.cs" />
+    <Compile Include="SystemConfiguration\Dto\CountryDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\CurrencyDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\EducationLevelDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\LicenseTypeDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\SalaryCompunentDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\SalaryPayFrequencyDto.cs" />
+    <Compile Include="SystemConfiguration\Dto\SkillDto.cs" />
+    <Compile Include="SystemConfiguration\QualificationService.cs" />
+    <Compile Include="Sessions\Dto\GetCurrentLoginInformationsOutput.cs" />
+    <Compile Include="Sessions\Dto\TenantLoginInfoDto.cs" />
+    <Compile Include="Sessions\Dto\UserLoginInfoDto.cs" />
+    <Compile Include="Sessions\ISessionAppService.cs" />
+    <Compile Include="Sessions\SessionAppService.cs" />
+    <Compile Include="Tenants\Dashboard\Dto\GetMemberActivityOutput.cs" />
+    <Compile Include="Tenants\Dashboard\ITenantDashboardAppService.cs" />
+    <Compile Include="Tenants\Dashboard\TenantDashboardAppService.cs" />
+    <Compile Include="TimeModule\Dto\AttendanceDto.cs" />
+    <Compile Include="TimeModule\ITimeService.cs" />
+    <Compile Include="TimeModule\TimeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tony\Common\Tony.Common.Infrastructure\Tony.Common.Infrastructure.csproj">
+      <Project>{36fb9991-5907-4927-8eac-3c4a0446777d}</Project>
+      <Name>Tony.Common.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftBreeze.BlueHrm.Core\SoftBreeze.BlueHrm.Core.csproj">
+      <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
+      <Name>SoftBreeze.BlueHrm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftBreeze.BlueHrm.EntityFramework\SoftBreeze.BlueHrm.EntityFramework.csproj">
+      <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
+      <Name>SoftBreeze.BlueHrm.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

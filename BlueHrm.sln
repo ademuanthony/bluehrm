@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DFA48E27-7D53-4955-A722-3D91A7119BE7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{67BE60D5-7E45-4079-B46D-B037BD5A236D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.Tests", "Tests\SoftBreeze.BlueHrm.Tests\SoftBreeze.BlueHrm.Tests.csproj", "{7F0AE638-2772-445B-B198-6CF9D7E2C8AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.WebApi", "SoftBreeze.BlueHrm.WebApi\SoftBreeze.BlueHrm.WebApi.csproj", "{5EB52D3D-09FD-463A-B02A-8D9856BD3724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.Web", "SoftBreeze.BlueHrm.Web\SoftBreeze.BlueHrm.Web.csproj", "{897F6FD8-6F90-48E4-95A5-B4429B896205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.Core", "SoftBreeze.BlueHrm.Core\SoftBreeze.BlueHrm.Core.csproj", "{17298EA0-AF73-4F30-B6F1-2066100D7D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.Application", "SoftBreeze.BlueHrm.Application\SoftBreeze.BlueHrm.Application.csproj", "{EDF5D964-4C0F-4F19-B674-58A38A5E5401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftBreeze.BlueHrm.EntityFramework", "SoftBreeze.BlueHrm.EntityFramework\SoftBreeze.BlueHrm.EntityFramework.csproj", "{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tony", "Tony", "{3745E83B-45C6-4E88-A6C7-2AB7A0819AC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BFD5DDA0-AC18-4057-8DF6-937580CA25EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tony.Common.Infrastructure", "Tony\Common\Tony.Common.Infrastructure\Tony.Common.Infrastructure.csproj", "{36FB9991-5907-4927-8EAC-3C4A0446777D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16C332C9-76E7-4A16-A191-F5E3177FD4A8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F0AE638-2772-445B-B198-6CF9D7E2C8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0AE638-2772-445B-B198-6CF9D7E2C8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0AE638-2772-445B-B198-6CF9D7E2C8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0AE638-2772-445B-B198-6CF9D7E2C8AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB52D3D-09FD-463A-B02A-8D9856BD3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897F6FD8-6F90-48E4-95A5-B4429B896205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17298EA0-AF73-4F30-B6F1-2066100D7D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF5D964-4C0F-4F19-B674-58A38A5E5401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36FB9991-5907-4927-8EAC-3C4A0446777D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36FB9991-5907-4927-8EAC-3C4A0446777D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36FB9991-5907-4927-8EAC-3C4A0446777D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36FB9991-5907-4927-8EAC-3C4A0446777D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F0AE638-2772-445B-B198-6CF9D7E2C8AC} = {67BE60D5-7E45-4079-B46D-B037BD5A236D}
+		{BFD5DDA0-AC18-4057-8DF6-937580CA25EA} = {3745E83B-45C6-4E88-A6C7-2AB7A0819AC5}
+		{36FB9991-5907-4927-8EAC-3C4A0446777D} = {BFD5DDA0-AC18-4057-8DF6-937580CA25EA}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://blenyo.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SoftBreeze.BlueHrm.Application\\SoftBreeze.BlueHrm.Application.csproj
+		SccProjectName1 = SoftBreeze.BlueHrm.Application
+		SccLocalPath1 = SoftBreeze.BlueHrm.Application
+		SccProjectUniqueName2 = SoftBreeze.BlueHrm.Core\\SoftBreeze.BlueHrm.Core.csproj
+		SccProjectName2 = SoftBreeze.BlueHrm.Core
+		SccLocalPath2 = SoftBreeze.BlueHrm.Core
+		SccProjectUniqueName3 = SoftBreeze.BlueHrm.EntityFramework\\SoftBreeze.BlueHrm.EntityFramework.csproj
+		SccProjectName3 = SoftBreeze.BlueHrm.EntityFramework
+		SccLocalPath3 = SoftBreeze.BlueHrm.EntityFramework
+		SccProjectUniqueName4 = SoftBreeze.BlueHrm.Web\\SoftBreeze.BlueHrm.Web.csproj
+		SccProjectName4 = SoftBreeze.BlueHrm.Web
+		SccLocalPath4 = SoftBreeze.BlueHrm.Web
+		SccProjectUniqueName5 = SoftBreeze.BlueHrm.WebApi\\SoftBreeze.BlueHrm.WebApi.csproj
+		SccProjectName5 = SoftBreeze.BlueHrm.WebApi
+		SccLocalPath5 = SoftBreeze.BlueHrm.WebApi
+		SccProjectUniqueName6 = Tests\\SoftBreeze.BlueHrm.Tests\\SoftBreeze.BlueHrm.Tests.csproj
+		SccProjectTopLevelParentUniqueName6 = BlueHrm.sln
+		SccProjectName6 = Tests/SoftBreeze.BlueHrm.Tests
+		SccLocalPath6 = Tests\\SoftBreeze.BlueHrm.Tests
+		SccProjectUniqueName7 = Tony\\Common\\Tony.Common.Infrastructure\\Tony.Common.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName7 = BlueHrm.sln
+		SccProjectName7 = Tony/Common/Tony.Common.Infrastructure
+		SccLocalPath7 = Tony\\Common\\Tony.Common.Infrastructure
+	EndGlobalSection
+EndGlobal

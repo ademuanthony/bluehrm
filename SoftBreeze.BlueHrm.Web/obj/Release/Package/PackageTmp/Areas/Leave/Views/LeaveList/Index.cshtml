@@ -1,0 +1,88 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Leave.LeaveList;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Leave/Views/LeaveList/Index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Leave/Views/LeaveList/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Leave/Views/LeaveList/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title"> 
+                <h1>
+                    <span>@L("LeaveList")</span> <small>@L("LeaveListHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @if (IsGranted(AppPermissions.Pages_Leaves_Create))
+        {
+            <button id="AssignLeaveButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("AssignLeave")</button>
+        }
+    </div>
+</div>
+<div class="portlet light">
+    <div class="portlet-body">
+
+        <div class="row">
+
+            <form id="LoadLeaveForm">
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control edited datepicker" type="date" name="StartDate" required>
+                        <label>@L("From")</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control edited datepicker" type="date" name="EndDate" required>
+                        <label>@L("To")</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        @Html.DropDownList("Status", ViewBag.PeriodId as SelectList, new {@class = "form-control edited"})
+                        <label>@L("Status")</label>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control edited" type="text" name="EmployeeNumber" required>
+                        <label>@L("EmployeeNumber")</label>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-md-offset-3">
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        @Html.DropDownList("SubunitId", ViewBag.Subunits as SelectList, "All", new { @class = "form-control edited" })
+                        <label>@L("Subunit")</label>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <button style="margin-top: 15px;" id="LoadButton" class="btn btn-default green-dark">
+                        <i class="fa fa-search"></i> @L("Load")
+                    </button>
+                </div>
+            </form>
+
+
+            
+        </div>
+
+        
+    </div>
+    <div class="portlet-body">
+        <div id="LeaveListTable"></div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Leave.Models.CreateOrEditLeaveEntitlmentModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditLeaveType"))
+    : L("AddLeaveType")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#LeaveTypeInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("LeaveType")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobInformationsTab">
+
+                <form name="LeaveTypeForm" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.LeaveEntitlement.Id" />
+                    }
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.LeaveEntitlement.EmployeeNumber.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="EmployeeNumber" value="@Model.LeaveEntitlement.EmployeeNumber">
+                        <label>@L("EmployeeNumber")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.LeaveEntitlement.NumberOfDays == 0 ? "" : " edited")"
+                               type="number" name="NumberOfDays" value="@(Model.LeaveEntitlement.NumberOfDays ==  0? "": 
+                                   Model.LeaveEntitlement.NumberOfDays.ToString())" required>
+                        <label>@L("NumberOfDays")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        @Html.DropDownListFor(m => m.LeaveEntitlement.LeaveTypeId,
+                       ViewBag.LeaveTypeId as SelectList, new { @class = "form-control edited", Name = "LeaveTypeId" })
+                        <label>@L("LeaveType")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        @Html.DropDownListFor(m => m.LeaveEntitlement.PeriodId,
+                       ViewBag.PeriodId as SelectList, new { @class = "form-control edited", Name = "PeriodId" })
+                        <label>@L("LeavePeriod")</label>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

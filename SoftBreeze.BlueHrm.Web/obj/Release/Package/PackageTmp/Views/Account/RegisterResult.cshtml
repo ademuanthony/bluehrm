@@ -1,0 +1,25 @@
+﻿@model SoftBreeze.BlueHrm.Web.Models.Account.RegisterResultViewModel
+@{
+    ViewBag.Title = L("SuccessfullyRegistered");
+}
+<h4><img src="~/Common/Images/technocrimelogo.png" alt="" width="200" /></h4>
+<ul>
+    <li><span class="text-muted">@L("NameSurname"):</span> @Model.NameAndSurname</li>
+    <li><span class="text-muted">@L("TenancyName"):</span> @Model.TenancyName</li>
+    <li><span class="text-muted">@L("UserName"):</span> @Model.UserName</li>
+    <li><span class="text-muted">@L("EmailAddress"):</span> @Model.EmailAddress</li>
+</ul>
+<div>
+    @if (Model.IsEmailConfirmationRequired)
+    {
+        <div class="alert alert-warning" role="alert">
+            @L("ConfirmationMailSentPleaseClickLinkInTheEmail", Model.EmailAddress)
+        </div>
+    }
+    @if (!Model.IsActive)
+    {
+        <div class="alert alert-warning" role="alert">
+            @L("YourAccountIsWaitingToBeActivatedByAdmin")
+        </div>
+    }
+</div>

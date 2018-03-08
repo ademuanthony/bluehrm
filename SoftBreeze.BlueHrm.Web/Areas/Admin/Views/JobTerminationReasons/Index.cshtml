@@ -1,0 +1,40 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Admin.JobConfiguration.JobTerminationReasons;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Admin/Views/JobTerminationReasons/Index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Admin/Views/Common/_PermissionTree.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/JobTerminationReasons/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/JobTerminationReasons/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("JobTerminationReasons")</span> <small>@L("JobTerminationReasonsHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @if (IsGranted(AppPermissions.Pages_Administration_JobConfiguration_JobTerminationReasons_Create))
+        {
+            <button id="CreateNewJobTerminationReasonButton" class="btn btn-primary blue">
+                <i class="fa fa-plus"></i> @L("CreateNewJobTerminationReason")
+            </button>
+        }
+    </div>
+</div>
+<div class="portlet light">
+    <div class="portlet-body">
+        <div id="JobTerminationReasonsTable"></div>
+    </div>
+</div>

@@ -1,0 +1,242 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using Castle.Core.Internal
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@using SoftBreeze.BlueHrm.Web.Areas.Pim.Controllers
+@model SoftBreeze.BlueHrm.PersonalInformation.Dto.Employees.EmployeeDto
+@{
+    ViewBag.CurrentPageName = PageNames.App.Pim.EmployeeList;
+}
+@using SoftBreeze.BlueHrm.PersonalInformation.Dto.Employees
+@{
+    var employeee = (EmployeeDto)ViewBag.Employee;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Pim/Views/EmployeeList/index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Pim/Views/EmployeeList/EmployeeDetail/Basic/Basic.js")
+    
+}
+
+
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Employees")</span> <small>@employeee.LastName @employeee.FirstName</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        <button id="SaveAllSettingsButton" class="btn btn-primary blue"><i class="fa fa-floppy-o"></i> @L("SaveAll")</button>
+    </div>
+</div>
+
+<div class="portlet light">
+    <div class="portlet-body">
+        <div id="SettingsTabPanel" class="tabbable-line">
+            
+            <ul class="nav nav-tabs nav-tabs-items-to-new-page">
+
+                <li class="active">
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.BasicSection})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("PersonalDetail")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Contacts})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Contacts")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.EmergencyContacts})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("EmergencyContacts")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Dependants})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Dependants")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Immigration})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Immigration")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Job})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Job")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Salary})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Salary")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Supervisors})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Supervisors")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Qualifications})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Qualifications")
+                    </a>
+                </li>
+                @*<li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Memberships})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Memberships")
+                    </a>
+                </li>*@
+
+            </ul>
+            
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="SettingsUserManagementTab">
+
+
+                    <div class="row">
+                        <div class="col-sm-2 text-center">
+                            <img id="EmployeeProfilePicture" src="@Url.Action("GetProfilePictureByUserId", "Profile",
+                                                                      new {area = string.Empty})?userId=@(Model.Id)" width="128" height="128"
+                                 class="img-thumbnail img-rounded user-edit-dialog-profile-image"/>
+
+                            <div class="form-group">
+                                <button class="btn btn-primary" id="ChangeProfilePictureButton" data-employeeId="@Model.Id">
+                                    <span class="fa fa-upload"></span>
+                                    Change Picture
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-10">
+
+                            <form name="BasicInformationsForm" id="BasicInformationsForm" role="form" novalidate class="form-validation">
+                                <input type="hidden" name="Id" value="@employeee.Id" />
+                                <input type="hidden" name="Username" value="@employeee.Username" />
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input class="form-control@(Model.FirstName.IsNullOrEmpty() ? "" : " edited")"
+                                                    value="@Model.FirstName" type="text" name="FirstName" required maxlength="@SoftBreeze.BlueHrm.Authorization.Users.User.MaxNameLength">
+                                            <label>@L("FirstName")</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input type="text" name="LastName" class="form-control@(Model.LastName.IsNullOrEmpty() ? "" : " edited")"
+                                                   value="@Model.LastName" required maxlength="@SoftBreeze.BlueHrm.Authorization.Users.User.MaxSurnameLength">
+                                            <label>@L("LastName")</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input type="text" name="MiddleName" class="form-control@(Model.MiddleName.IsNullOrEmpty() ? "" : " edited")"
+                                                   value="@Model.MiddleName" required maxlength="@SoftBreeze.BlueHrm.Authorization.Users.User.MaxSurnameLength">
+                                            <label>@L("MiddleName")</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input class="form-control@(Model.Number.IsNullOrEmpty() ? "" : " edited")" value="@Model.Number"
+                                                   type="text" name="Number" required>
+                                            <label>@L("Number")</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input type="date" name="DateEmployed" class="form-control edited"
+                                                    value="@(Model.DateEmployed.HasValue?Model.DateEmployed.Value.ToShortDateString():"")" 
+                                                   >
+                                            <label>@L("DateEmployed") (mm-dd-yyyy)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <select name="Gender" class="form-control edited" required>
+                                                <option></option>
+                                                <option value="@Gender.Male" @(Model.Gender == Gender.Male ? "selected" : "")>Male</option>
+                                                <option value="@Gender.Female" @(Model.Gender == Gender.Female ? "selected" : "")>Female</option>
+                                            </select>
+                                            <label>@L("Gender")</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <select name="MarritalStatus" class="form-control edited">
+                                                <option></option>
+                                                <option value="@MarritalStatus.Single" @(Model.MarritalStatus == MarritalStatus.Single ? "selected" : "")>Single</option>
+                                                <option value="@MarritalStatus.Married" @(Model.MarritalStatus == MarritalStatus.Married ? "selected" : "")>Married</option>
+                                            </select>
+                                            <label>@L("MarritalStatus")</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input type="date" name="DateOfBirth" class="form-control edited"
+                                                    value="@(Model.DateOfBirth.HasValue?Model.DateOfBirth.Value.ToShortDateString():"")">
+                                            <label>@L("DateOfBirth") (mm-dd-yyyy)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input class="form-control@(Model.DriversLicenseNumber.IsNullOrEmpty() ? "" : " edited")" 
+                                                   value="@Model.DriversLicenseNumber"
+                                                   type="text" name="DriversLicenseNumber" required>
+                                            <label>@L("DriversLicenseNumber")</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                                            <input type="date" name="LicenseExpiryDate" class="form-control edited" 
+                                                   value="@(Model.LicenseExpiryDate.HasValue?Model.LicenseExpiryDate.Value.ToShortDateString():"")">
+                                            <label>@L("LicenseExpiryDate") (mm-dd-yyyy)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

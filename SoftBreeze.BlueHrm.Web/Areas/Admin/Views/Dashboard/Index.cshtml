@@ -1,0 +1,68 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.DashboardViewModel
+
+@{
+    ViewBag.CurrentPageName = PageNames.App.Tenant.Dashboard;
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Admin/Views/Dashboard/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Dashboard")</span> <small>@L("DashboardHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+
+    </div>
+</div>
+
+<div class="note note-info note-bordered">
+    <h3>@L("DashboardDemo_Note_Title")<span class="close" data-close="note"></span></h3>
+    <p>
+        @L("DashboardDemo_Note_Info")
+    </p>
+    <br/>
+</div>
+
+<div class="row margin-top-10">
+   
+     <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-red-haze">@Model.LeaveRequestCount</h3>
+                    <small>NEW Pending Leave Request</small>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-bed"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-purple-soft">@Model.EmployeeCount</h3>
+                    <small>Employees</small>
+                </div>
+                <div class="icon">
+                    <i class="icon-user"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

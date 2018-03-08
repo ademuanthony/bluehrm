@@ -1,0 +1,89 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Pim.Models.CreateOrEditSalaryModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditSalary") + ": " + Model.Salary.Amount.ToString())
+    : L("AddSalaryCompunent")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#SalaryInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("SalaryComponent")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobInformationsTab">
+
+                <form name="SalaryDataformationsForm" role="form" novalidate class="form-validation">
+                    <input type="hidden" name="EmployeeId" value="@ViewBag.EmployeeId" />
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Salary.Id" />
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        @Html.DropDownListFor(m => m.Salary.SalaryComponentId, ViewBag.SalaryComponentId as SelectList,
+                       new { @class = "form-control edited", Name = "SalaryComponentId" })
+                        <label>@L("Component")</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.Salary.PayGradeId, ViewBag.PayGradeId as SelectList,
+                            new { @class = "form-control edited", Name = "PayGradeId" })
+                                <label>@L("PayGrade")</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.Salary.PayFrequencyId, ViewBag.PayFrequencyId as SelectList,
+                            new { @class = "form-control edited", Name = "PayFrequencyId" })
+                                <label>@L("PayFrequency")</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.Salary.CurrencyId, ViewBag.CurrencyId as SelectList,
+                            new { @class = "form-control edited", Name = "CurrencyId" })
+                                <label>@L("Currency")</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                <input class="form-control@(Math.Abs(Model.Salary.Amount) < 0.0000000001 ? "" : " edited")"
+                                       type="text" name="Amount" value="@(Math.Abs(Model.Salary.Amount) < 0.0000000001 ? "" : Model.Salary.Amount.ToString())" required="">
+                                <label>@L("Amount")</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <textarea class="form-control@(Model.Salary.Notes.IsNullOrWhiteSpace() ? "" : " edited")"
+                                  name="Notes">
+                            @Model.Salary.Notes
+                        </textarea>
+                        <label>@L("Notes")</label>
+                    </div>
+
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

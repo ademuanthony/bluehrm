@@ -1,0 +1,104 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.TimeModule.Dto.SaveAttendanceInput
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditAttendace"))
+    : L("EnterAttendance")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#LeaveTypeInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("Attendance")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobInformationsTab">
+
+                <form name="Attendanceform" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Id" />
+                    }
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.EmployeeNumber.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="EmployeeNumber" value="@Model.EmployeeNumber" required>
+                        <label>@L("EmployeeNumber")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control edited datepicker"
+                               type="text" name="Date" value="@Model.Date.ToShortDateString()" required>
+                        <label>@L("Date")</label>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.HourIn,
+                       ViewBag.CheckInHour as SelectList, new { @class = "form-control edited", Name = "HourIn" , required = "required" })
+                                <label>@L("HourIn")</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.MuniteIn,
+                       ViewBag.CheckInMunite as SelectList, new { @class = "form-control edited", Name = "MuniteIn", required = "required" })
+                                <label>@L("MuniteIn")</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.HourOut,
+                       ViewBag.CheckOutHour as SelectList, new { @class = "form-control edited", Name = "HourOut" })
+                                <label>@L("HourOut")</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group form-md-line-input form-md-floating-label">
+                                @Html.DropDownListFor(m => m.MuniteOut,
+                       ViewBag.CheckOutMunite as SelectList, new { @class = "form-control edited", Name = "MuniteOut" })
+                                <label>@L("MuniteOut")</label>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    @*<div class="form-group form-md-line-input form-md-floating-label">
+                        <textarea name="Comment" class="form-control edited">
+                            @Model.Leave.Comment
+                        </textarea>
+                        <label>@L("Comment")</label>
+                    </div>*@
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

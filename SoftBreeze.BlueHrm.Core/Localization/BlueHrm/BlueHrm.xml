@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <text name="HomePage" value="Home page" />
+    <text name="AboutUs" value="About us" />
+    <text name="Administration" value="Administration" />
+    <text name="Roles" value="Roles" />
+    <text name="Users" value="Users" />
+    <text name="InvalidFormMessage" value="Your form is invalid. Please check and correct it." />
+    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
+    <text name="TenancyName" value="Tenancy name" />
+    <text name="UserNameOrEmail" value="User name or email" />
+    <text name="Password" value="Password" />
+    <text name="RememberMe" value="Remember me" />
+    <text name="LogIn" value="Log in" />
+    <text name="ForgotPassword" value="Forgot password?" />
+    <text name="DontYouHaveAnAccount" value="Don't you have an account?" />
+    <text name="CreateAnAccount" value="Create account" />
+    <text name="Pages" value="Pages" />
+    <text name="RoleName" value="Role name" />
+    <text name="EditRole" value="Edit role" />
+    <text name="CreateNewRole" value="Create new role" />
+    <text name="RoleProperties" value="Role properties" />
+    <text name="Permissions" value="Permissions" />
+    <text name="Save" value="Save" />
+    <text name="Cancel" value="Cancel" />
+    <text name="RolesHeaderInfo" value="Use roles to group permissions." />
+    <text name="Static" value="Static" />
+    <text name="Actions" value="Actions" />
+    <text name="Delete" value="Delete" />
+    <text name="SavedSuccessfully" value="Saved successfully." />
+    <text name="AreYouSure" value="Are you sure?" />
+    <text name="YesDelete" value="Yes, delete!" />
+    <text name="DeletingUser" value="Deleting user" />
+    <text name="UsersHeaderInfo" value="Manage users and permissions." />
+    <text name="CreateNewUser" value="Create new user" />
+    <text name="UserName" value="User name" />
+    <text name="Name" value="Name" />
+    <text name="Surname" value="Surname" />
+    <text name="EmailAddress" value="Email address" />
+    <text name="LastLoginTime" value="Last login time" />
+    <text name="EditUser" value="Edit user" />
+    <text name="UserInformations" value="User informations" />
+    <text name="PasswordRepeat" value="Password (repeat)" />
+    <text name="SuccessfullyDeleted" value="Successfully deleted." />
+    <text name="RoleDeleteWarningMessage" value="Role {0} will be deleted and unassigned from all assigned users." />
+    <text name="UserDeleteWarningMessage" value="User {0} will be deleted." />
+    <text name="Active" value="Active" />
+    <text name="EmailConfirm" value="Email confirm" />
+    <text name="Yes" value="Yes" />
+    <text name="No" value="No" />
+    <text name="MySettings" value="My settings" />
+    <text name="Logout" value="Logout" />
+    <text name="Reset" value="Reset" />
+    <text name="ResetPermissionsTooltip" value="This button immediately resets user specific permission settings and saves changes. The user will only have permissions from assigned roles." />
+    <text name="ResetSuccessfully" value="Reset successfully" />
+    <text name="Tenants" value="Tenants" />
+    <text name="TenantsHeaderInfo" value="Manage your tenants." />
+    <text name="CreateNewTenant" value="Create new tenant" />
+    <text name="TenancyCodeName" value="Tenancy code name" />
+    <text name="TenantName" value="Tenant name" />
+    <text name="TenantDeleteWarningMessage" value="Tenant {0} will be deleted." />
+    <text name="AdminEmailAddress" value="admin email" />
+    <text name="AdminPassword" value="admin password" />
+    <text name="AdminPasswordRepeat" value="admin password (repeat)" />
+    <text name="EditTenant" value="Edit tenant" />
+    <text name="ChangingPermissions" value="Changing permissions" />
+    <text name="EditingUser" value="Editing user" />
+    <text name="CreatingNewUser" value="Creating new user" />
+    <text name="Edit" value="Edit" />
+    <text name="EditingTenant" value="Editing tenant" />
+    <text name="CreatingNewTenant" value="Creating new tenant" />
+    <text name="DeletingTenant" value="Deleting tenant" />
+    <text name="EditingRole" value="Editing role" />
+    <text name="CreatingNewRole" value="Creating new role" />
+    <text name="DeletingRole" value="Deleting role" />
+    <text name="CreationTime" value="Creation time" />
+    <text name="SearchWithThreeDot" value="Search..." />
+    <text name="ResetSpecialPermissions" value="Reset special permissions" />
+    <text name="SavingWithThreeDot" value="Saving..." />
+    <text name="Settings" value="Settings" />
+    <text name="SaveAll" value="Save all" />
+    <text name="SettingsHeaderInfo" value="Show and change application settings." />
+    <text name="EmailSmtp" value="Email (SMTP)" />
+    <text name="DefaultFromAddress" value="Default from (sender) email address" />
+    <text name="DefaultFromDisplayName" value="Default from (sender) display name" />
+    <text name="SmtpHost" value="SMTP host" />
+    <text name="SmtpPort" value="SMTP port" />
+    <text name="UseDefaultCredentials" value="Use default credentials" />
+    <text name="DomainName" value="Domain name" />
+    <text name="UseSsl" value="Use SSL" />
+    <text name="ThisWebSiteRootAddress" value="Web site root address" />
+    <text name="ThisWebSiteRootAddress_Hint" value="It will be used when building links to this web site. It's needed for some tasks like building password reset links. Ex: http://mydomain.com/" />
+    <text name="General" value="General" />
+    <text name="SendPasswordResetLink_Information" value="A password reset link will be sent to your email to reset your password. If you don't get an email within a few minutes, please re-try." />
+    <text name="Send" value="Send" />
+    <text name="PasswordReset" value="Password reset" />
+    <text name="InvalidUserNameOrEmailAddress" value="Invalid user name or email address" />
+    <text name="PasswordResetEmail_Subject" value="PhoneBook password reset" />
+    <text name="PasswordResetEmail_Title" value="PhoneBook password reset." />
+    <text name="PasswordResetEmail_SubTitle" value="This email is sent you to reset and re-create your password." />
+    <text name="PasswordResetEmail_ClickTheLinkBelowToResetYourPassword" value="Please click the link below to reset your password:" />
+    <text name="EmailActivation_Subject" value="PhoneBook account email activation" />
+    <text name="EmailActivation_Title" value="Welcome to PhoneBook." />
+    <text name="EmailActivation_SubTitle" value="This email is sent you to verify your email." />
+    <text name="EmailActivation_ClickTheLinkBelowToVerifyYourEmail" value="Please click the link below to verify your email address:" />
+    <text name="InvalidEmailAddress" value="Invalid email address" />
+    <text name="InvalidPasswordResetCode" value="Invalid password reset code" />
+    <text name="InvalidPasswordResetCode_Detail" value="Please be sure you entered this page by clicking the link sent to your email. If this not solves the problem, you can re-try to request a new password reset link." />
+    <text name="PleaseEnterYourNewPassword" value="Please enter your new password." />
+    <text name="UserEmailIsNotConfirmedAndCanNotLogin" value="Your email address is not confirmed. Please check your email and click the email confirmation link to activate your account. If you did not receive activation email, click the 'email confirmation' to request a new email." />
+    <text name="LoginFailed" value="Login failed!" />
+    <text name="InvalidEmailConfirmationCode" value="Invalid email confirmation code" />
+    <text name="InvalidEmailConfirmationCode_Detail" value="Please be sure you entered this page by clicking the link sent to your email. If this not solves the problem, you can re-try to request a new confirmation code." />
+    <text name="YourEmailIsConfirmedMessage" value="Your email address is successfully confirmed." />
+    <text name="ShouldChangePasswordOnNextLogin" value="Should change password on next login." />
+    <text name="SetRandomPassword" value="Set random password." />
+    <text name="EmailActivation" value="Email activation" />
+    <text name="SendEmailActivationLink_Information" value="A link will be sent to your email to activate your email address. If you don't get an email within a few minutes, please re-try." />
+    <text name="SendActivationEmail" value="Send activation email." />
+    <text name="ChangePassword" value="Change password" />
+    <text name="CurrentPassword" value="Current password" />
+    <text name="NewPassword" value="New password" />
+    <text name="NewPasswordRepeat" value="New password (repeat)" />
+    <text name="YourPasswordHasChangedSuccessfully" value="Your password has changed successfully." />
+    <text name="SelfUserRegistrationIsDisabledMessage" value="You can not register to the system!" />
+    <text name="SelfUserRegistrationIsDisabledMessage_Detail" value="Self user registration is disabled. Please contact to the system administrator to register." />
+    <text name="SuccessfullyRegistered" value="Successfully registered" />
+    <text name="ConfirmationMailSentPleaseClickLinkInTheEmail" value="A confirmation mail sent to {0}. Please click link in the email in order to confirm your mail address." />
+    <text name="YourAccountIsWaitingToBeActivatedByAdmin" value="Your account is waiting to be activated by system admin." />
+    <text name="NameSurname" value="Name surname" />
+    <text name="UserManagement" value="User management" />
+    <text name="AllowUsersToRegisterThemselves" value="Allow users to register to the system." />
+    <text name="AllowUsersToRegisterThemselves_Hint" value="If you disable this, users will only be added by admin using user management page." />
+    <text name="NewRegisteredUsersIsActiveByDefault" value="New registered users are active by default." />
+    <text name="NewRegisteredUsersIsActiveByDefault_Hint" value="If you disable this, new users will not be active (and can not login) until admin manually activate the account." />
+    <text name="Default" value="Default" />
+    <text name="DefaultRole_Description" value="Assign to new users as default." />
+    <text name="StaticRole_Tooltip" value="Static roles can not be deleted." />
+    <text name="EmailConfirmationRequiredForLogin" value="Email confirmation required for login." />
+    <text name="{0}UserCannotBeDeleted" value="{0} user can not be deleted." />
+    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+    <text name="ExportToExcel" value="Export to excel" />
+    <text name="ChangeProfilePicture" value="Change profile picture" />
+    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+    <text name="ProfilePicture_Change_Info" value="You can select a JPG/JPEG file with a maximum 30KB size." />
+    <text name="ProfilePicture_Change_Error" value="Profil resminiz değiştirilemedi." />
+    <text name="ProfilePicture_Warn_SizeLimit" value="Picture size must be smalled than 30KB. Please select another file." />
+    <text name="ProfilePicture_Warn_FileType" value="You can only select JPG/JPEG file. Please select another file." />
+    <text name="Dashboard" value="Dashboard" />
+    <text name="DashboardHeaderInfo" value="statistics and reports" />
+    <text name="GoToApplication" value="Go to application" />
+    <text name="TenantInformations" value="Tenant informations" />
+    <text name="PersonalInformations" value="Personal informations" />
+    <text name="AccountSettings" value="Account settings" />
+    <text name="Captha_Hint" value="Please enter the security code shown in the picture below:" />
+    <text name="Back" value="Back" />
+    <text name="Submit" value="Submit" />
+    <text name="SignUp" value="Sign up" />
+    <text name="CaptchaCanNotBeEmpty" value="Security code can not be empty." />
+    <text name="IncorrectCaptchaAnswer" value="Security code is not valid." />
+    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+    <text name="CanNotChangeAdminUserName" value="Can not change username of the admin." />
+    <text name="Error" value="Error!" />
+    <text name="OopsYouAreLost" value="Oops! You're lost." />
+    <text name="WeCanNotFindThePage" value="We can not find the page you're looking for." />
+    <text name="DashboardDemo_Note_Title" value="Welcome to SUPERFLUX HRM!" />
+    <text name="DashboardDemo_Note_Info">
+      This is all you need to manage the staffs in your company. 
+      This is the Human Resource Management System(HRMS) for your. Enjoy!!!
+    </text>
+    <text name="WelcomePage_Title" value="Welcome!" />
+    <text name="WelcomePage_Info" value="Welcome to the application. You can use the menu to start using the application. If you don't see any menu item, probably you don't have permission to see any page. Consider to ask system administration for permissions." />
+    <text name="RequestedFileDoesNotExists" value="Requested file does not exists!" />
+    <text name="MailSent" value="Mail sent" />
+    <text name="PasswordResetMailSentMessage" value="A password reset link sent to your e-mail address. Please check your emails." />
+    <text name="ActivationMailSentMessage" value="An e-mail activation link sent to your e-mail address. Please check your emails." />
+    <text name="UseCaptchaOnRegistration" value="Use security image question (captcha) on registration." />
+    <text name="FormBasedRegistration" value="Form Based Registration" />
+    <text name="LdapSettings" value="LDAP Settings" />
+    <text name="EnableLdapAuthentication" value="Enable LDAP Authentication." />
+    <text name="OtherSettings" value="Other Settings" />
+    <text name="AuditLogs" value="Audit logs" />
+    <text name="Success" value="Success" />
+    <text name="Time" value="Time" />
+    <text name="Service" value="Service" />
+    <text name="Action" value="Action" />
+    <text name="Duration" value="Duration" />
+    <text name="IpAddress" value="IP address" />
+    <text name="Client" value="Client" />
+    <text name="Browser" value="Browser" />
+    <text name="Xms" value="{0} ms" />
+    <text name="Close" value="Close" />
+    <text name="Refresh" value="Refresh" />
+    <text name="ErrorState" value="Error state" />
+    <text name="All" value="All" />
+    <text name="HasError" value="Has error" />
+    <text name="ShowAdvancedFilters" value="Show advanced filters" />
+    <text name="HideAdvancedFilters" value="Hide advanced filters" />
+    <text name="AuditLogDetail" value="Audit log detail" />
+    <text name="Parameters" value="Parameters" />
+    <text name="DateRange" value="Date range" />
+    <text name="ActionInformations" value="Action informations" />
+    <text name="Today" value="Today" />
+    <text name="Yesterday" value="Yesterday" />
+    <text name="Last7Days" value="Last 7 days" />
+    <text name="Last30Days" value="Last 30 days" />
+    <text name="ThisMonth" value="This month" />
+    <text name="LastMonth" value="Last month" />
+    <text name="TenantSelection" value="Tenant Selection" />
+    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+    <text name="LoginWith" value="Login with:" />
+    <text name="PasswordChangeDontRememberMessage" value="If you can not remember your password, {0}." />
+    <text name="ClickHere" value="click here" />
+    <text name="Apply" value="Apply" />
+    <text name="CustomRange" value="Custom range" />
+    <text name="DashboardNoteForMpaVersion">
+      <![CDATA[
+      See Demo for Multi-Page Application version with <strong>ASP.NET MVC</strong> and <strong>jQuery</strong>.
+      ]]>
+    </text>
+    <text name="DashboardNoteForSpaVersion">
+      <![CDATA[
+      Notice: There is also a <strong>Single-Page Application</strong> version built using ASP.NET MVC and <strong>AngularJs</strong>.
+      ]]>
+    </text>
+    <text name="SeeDemo" value="See demo" />
+    <text name="Edition" value="Edition" />
+    <text name="Editions" value="Editions" />
+    <text name="EditionsHeaderInfo" value="Manage editions and features of the application" />
+    <text name="CreateNewEdition" value="Create new edition" />
+    <text name="EditEdition" value="Edit edition" />
+    <text name="EditionProperties" value="Edition properties" />
+    <text name="EditionName" value="Edition name" />
+    <text name="Features" value="Features" />
+    <text name="EditionDeleteWarningMessage" value="{0} will be deleted and unassigned from all assigned tenants." />
+    <text name="CreatingNewEdition" value="Creating new edition" />
+    <text name="EditingEdition" value="Editing edition" />
+    <text name="DeletingEdition" value="Deleting edition" />
+    <text name="ChangingFeatures" value="Changing features" />
+    <text name="ResetSpecialFeatures" value="Reset special features" />
+    <text name="ResetFeaturesTooltip" value="This button immediately resets tenant specific feature settings and saves changes. The tenant will only have features from assigned edition." />
+    <text name="NotAssigned" value="Not assigned" />
+    <text name="InvalidFeaturesWarning" value="One or more feature values are not valid!" />
+    <text name="Languages" value="Languages" />
+    <text name="LanguagesHeaderInfo" value="Manage user interface languages." />
+    <text name="CreateNewLanguage" value="Create new language" />
+    <text name="Code" value="Code" />
+    <text name="CreatingNewLanguage" value="Creating new language" />
+    <text name="EditingLanguage" value="Editing language" />
+    <text name="DeletingLanguages" value="Deleting language" />
+    <text name="ChangingTexts" value="Changing texts" />
+    <text name="SuccessfullySaved" value="Successfully saved." />
+    <text name="Language" value="Language" />
+    <text name="Flag" value="Flag" />
+    <text name="SetAsDefaultLanguage" value="Set as default language" />
+    <text name="InvlalidLanguageCode" value="Invalid language code." />
+    <text name="EditLanguage" value="Edit language" />
+    <text name="ChangeTexts" value="Change texts" />
+    <text name="TargetValue" value="Target value" />
+    <text name="BaseValue" value="Base value" />
+    <text name="Key" value="Key" />
+    <text name="SaveAndClose" value="Save &amp; Close" />
+    <text name="SaveAndNext" value="Save &amp; Next" />
+    <text name="EditText" value="Edit text" />
+    <text name="LanguageTexts" value="Language texts" />
+    <text name="LanguageTextsHeaderInfo" value="Edit texts for languages." />
+    <text name="EmptyOnes" value="Empty ones" />
+    <text name="Source" value="Source" />
+    <text name="BaseLanguage" value="Base language" />
+    <text name="TargetLanguage" value="Target language" />
+    <text name="Previous" value="Previous" />
+    <text name="LanguageDeleteWarningMessage" value="Are you sure to delete the language {0}?" />
+    <text name="CanNotEditOrDeleteDefaultLanguages" value="Can not edit or delete default languages. You can only edit or delete the languages you added. But you can change texts of all languages." />
+    <text name="LookingForMpaVersion" value="Looking for Multi-Page Application Version?" />
+    <text name="LookingForSpaVersion" value="Looking for Single-Page Application Version?" />
+    <text name="PhoneBook" value="Phone book" />
+    <text name="AllPeople" value="All People" />
+    <text name="CreateNewPerson" value="Create new person" />
+    <text name="DeletePerson" value="Delete person" />
+    <text name="AreYouSureToDeletePerson" value="Are you sure to delete the person?" />
+    <text name="PhoneType_Mobile" value="Mobile" />
+    <text name="PhoneType_Home" value="Home" />
+    <text name="PhoneType_Business" value="Business" />
+    <text name="Type" value="Type" />
+    <text name="PhoneNumber" value="Phone number" />
+  
+
+    <!--Job Configuration 2/4/2016-->
+    <text name="JobConfig" value="Job Configuration"/>
+    
+    <text name="JobTitles" value="Job Titles"/>  
+    <text name="JobTitle" value="Job Title"/>
+    <text name="CreateNewJobTitle" value="Create New Job Title"/>
+    <text name="EditJobTitle" value="Edit Job Title"/>
+    <text name="DeleteJobTitle" value="Delete Job Title"/>
+    <text name="JobTitlesHeaderInfo" value="Manage Job Titles"/>
+    <text name="JobInformation" value="Job Information"/>
+    <text name="Description" value="Description"/>
+    <text name="DeleteJobWarningMessage" value="{0} will be deleted and remove all employee job title?"/>
+    <text name="CreateNewJob" value="Create New Job"/>
+    
+    <text name="PayGrades" value="Pay Grades"/>
+    <text name="PayGradesHeaderInfo" value="Manage Paygrades"/>
+    <text name="CreateNewPayGrade" value="Create Pay Grade"/>
+    <text name="EditPayGrade" value="Edit Paygrade"/>
+    <text name="DeletePayGrade" value="Delete Paygrade"/>
+    <text name="DeletePayGradeWarningMessage" value="{0} will be pernently deleted"/>
+    <text name="PaygradeInformation" value="Paygrade Information"/>
+    
+    <text name="EmployeeStatuses" value="Employee Statuses"/>
+    <text name="EmployeeStatusesHeaderInfo" value="Manage Employee Statuses"/>
+    <text name="CreateNewEmployeeStatus" value="Create Employee Status"/>
+    <text name="EditEmployeeStatus" value="Edit Employee Status"/>
+    <text name="DeleteEmployeeStatus" value="Delete Employee Status"/>
+    <text name="DeleteEmployeeStatusWarningMessage" value="{0} will be pernently deleted"/>
+    <text name="EmployeeStatusInformation" value="Employee Status Information"/>
+    
+    <text name="JobCategories" value="Job Categories"/>
+    <text name="JobCategoriesHeaderInfo" value="Manage Job Categories"/>
+    <text name="CreateNewJobCategory" value="Create Job Category"/>
+    <text name="EditJobCategory" value="Edit Job Category"/>
+    <text name="DeleteJobCategory" value="Delete Job Category"/>
+    <text name="DeleteJobCategoryWarningMessage" value="{0} will be pernently deleted"/>
+    <text name="JobCategoryInformation" value="Job Category Information"/>
+    
+    <text name="JobTerminationReasons" value="Termination Reasons"/>
+    <text name="JobTerminationReasonsHeaderInfo" value="Manage Termination Reasons"/>
+    <text name="CreateNewJobTerminationReason" value="Create Termination Reason"/>
+    <text name="EditjobTerminationReason" value="Edit Termination Reason"/>
+    <text name="DeleteJobTerminationReason" value="Delete Termination Reason"/>
+    <text name="DeleteJobTerminationReasonWarningMessage" value="{0} will be pernently deleted"/>
+    <text name="JobTerminationReasonInformation" value="Termination Reasons"/>
+
+    <!--Organisation-->
+    <text name="Organisation" value="Organisation"/>
+    
+    <text name="GeneralInformation" value="General Information"/>
+    <text name="UpdateGeneralInformation" value="Update General Information"/>
+
+    <text name="Locations" value="Locations"/>
+    <text name="LocationsHeaderInfo" value="Manage Locations"/>
+    <text name="CreateLocation" value="Create Location"/>
+    <text name="EditLocation" value="Edit Location"/>
+    <text name="DeleteLocation" value="Delete Location"/>
+    <text name="City" value="City"/>
+    <text name="ZipCode" value="Zip Code"/>
+
+    <text name="Units" value="Units"/>
+    <text name="UnitsHeaderInfo" value="Manage Units"/>
+    <text name="CreateUnit" value="Create Unit"/>
+    <text name="EditUnit" value="Edit Unit"/>
+    <text name="DeleteUnit" value="Delete Unit"/>
+    
+  
+    <!--Qualification-->
+    <text name="Qualification" value="Qualification"/>
+    
+    <text name="Skills" value="Skills"/>
+    <text name="SkillsHeaderInfo" value="Manage Skills"/>
+    <text name="CreateSkill" value="Create Skill"/>
+    <text name="EditSkill" value="Edit Skill"/>
+    <text name="DeleteSkill" value="Delete Skill"/>
+    <text name="SkillInformation" value="Skill Information"/>
+    
+    <text name="EducationalLevels" value="Educational Levels"/>
+    <text name="EducationalLevelsHeaderInfo" value="Manage Educational Levels"/>
+    <text name="CreateEducationalLevel" value="Create Educational Level"/>
+    <text name="EditEducationalLevel" value="Edit Educational Level"/>
+    <text name="DeleteEducationalLevel" value="Delete Educational Level"/>
+    <text name="EducationalLevelInformation" value="Educational Level Information"/>
+    
+    <text name="Licenses" value="Licenses"/>
+    <text name="LicensesHeaderInfo" value="Manage Licenses"/>
+    <text name="CreateLicense" value="Create License"/>
+    <text name="EditLicense" value="Edit License"/>
+    <text name="DeleteLicense" value="Delete Licenses"/>
+    <text name="LicenseInformation" value="License Information"/>
+    
+    
+    <!--HRM-->
+    <text name="Pim" value="PIM"/>
+    
+    <text name="EmployeeList" value="Employee List"/>
+    <text name="EmployeesList" value="Employees List"/>
+    <text name="Employees" value="Employees"/>
+    <text name="EmployeeListHeaderInfo" value="Manage Employee List"/>
+    <text name="Employee" value="Employee"/>
+    <text name="CreateEmployee" value="Create Employee"/>
+    <text name="EditEmployee" value="Edit Employee"/>
+    <text name="DeleteEmployee" value="Delete Employee"/>
+    <text name="FirstName" value="First Name"/>
+    <text name="LastName" value="Last Name"/>
+    <text name="MiddleName" value="Middle Name"/>
+    <text name="Number" value="Number"/>
+    <text name="BasicInformations" value="Basic Informations"/>
+    <text name="Report" value="Report"/>
+    <text name="Manage" value="Manage"/>
+    <text name="PersonalDetail" value="Personal Detail"/>
+    <text name="Contacts" value="Contacts"/>
+    <text name="EmergencyContacts" value="Emergency Contacts"/>
+    <text name="Dependants" value="Dependants"/>
+    <text name="Immigration" value="Immigration"/>
+    <text name="Job" value="Job"/>
+    <text name="Salary" value="Salary"/>
+    <text name="Supervisors" value="Supervisors"/>
+    <text name="Qualifications" value="Qualifications"/>
+    <text name="Memberships" value="Memberships"/>
+    <text name="DateEmployed" value="Date Employed"/>
+    <text name="MarritalStatus" value="MarritalStatus"/>
+    <text name="Gender" value="Gender"/>
+    <text name="DateOfBirth" value="Date of Birth"/>
+    <text name="LicenseExpiryDate" value="License Expiry Date"/>
+    <text name="DriversLicenseNumber" value="Drivers License Number"/>
+
+    <text name="AddressLine1" value="Address Line 1"/>
+    <text name="AddressLine2" value="Address Line 2"/>
+    <text name="State" value="State"/>
+    <text name="Zip" value="Zip"/>
+    <text name="Country" value="Country"/>
+    <text name="MobilePhoneNumber" value="Mobile Phone Number"/>
+    <text name="HomePhoneNumber" value="Home Phone Number"/>
+    <text name="WorkPhoneNumber" value="Work Phone Number"/>
+    <text name="WorkEmail" value="Work Email"/>
+    <text name="OtherEmail" value="Other Email"/>
+    <text name="CreateEmergencyContact" value="Create Contact"/>
+    <text name="EditEmergencyContact" value="Edit Contact"/>
+    <text name="Relationship" value="Relationship"/>
+    <text name="CreateContact" value="Create Contact"/>
+    <text name="Contact" value="Contact"/>
+    <text name="CreateDependant" value="Create Dependant"/>
+    <text name="Dependant" value="Dependant"/>
+    <text name="Add" value="Add"/>
+    <text name="Document" value="Document"/>
+    <text name="IssueDate" value="Issue Date"/>
+    <text name="EligibleStatus" value="Eligible Status"/>
+    <text name="EligibleReviewDate" value="Eligible Review Date"/>
+    <text name="Comment" value="Comment"/>
+    <text name="NewImmigration" value="New Immigration"/>
+    <text name="ExpiryDate" value="Expiry Date"/>
+    <text name="Status" value="Status"/>
+    <text name="JobCategory" value="Job Category"/>
+    <text name="JoinDate" value="Join Date"/>
+    <text name="TerminationAppointed" value="Termination Appointed"/>
+    <text name="Location" value="Location"/>
+    <text name="Unit" value="Unit"/>
+    <text name="Parent" value="Parent"/>
+    <text name="SalaryComponent" value="Salary Component"/>
+    <text name="PayGrade" value="Pay Grade"/>
+    <text name="PayFrequency" value="Pay Frequency"/>
+    <text name="Currency" value="Currency"/>
+    <text name="Amount" value="Amount"/>
+    <text name="AddSalaryCompunent" value="New Salary Compunent"/>
+    <text name="SalaryCompunents" value="Salary Compunents"/>
+    <text name="Component" value="Component"/>
+    <text name="Notes" value="Notes"/>
+    <text name="DeleteWarningMessage" value="{0} will be delete forever"/>
+    
+    <text name="Supervisor" value="Supervisor"/>
+    <text name="AddSubordinate" value="Add Subordinate"/>
+    <text name="AssignSupervisor" value="Assign Supervisor"/>
+    <text name="ReportMethod" value="Report Method"/>
+
+    <text name="Qaulification" value="Qaulification"/>
+    <text name="Institution" value="Institution"/>
+    <text name="Specialization" value="Specialization"/>
+    <text name="Score" value="Score"/>
+    <text name="StartDate" value="Start Date"/>
+    <text name="EndDate" value="End Date"/>
+    <text name="Year" value="Year"/>
+    <text name="AddEducation" value="Add Education"/>
+    <text name="AddQualilfication" value="Add Qualilfication"/>
+    <text name="EditQualification" value="Edit Qualification"/>
+    <text name="EducationalLevel" value="Educational Level"/>
+    
+    <text name="Leave" value="Leave"/>
+    <text name="Requests" value="Requests"/>
+    <text name="LeaveList" value="Leave List"/>
+    <text name="LeaveListHeaderInfo" value="Manage Leaves"/>
+    <text name="AssignLeave" value="Assign Leave"/>
+    <text name="EditLeave" value="Edit Leave"/>
+    <text name="DeleteLeave" value="Delete Leave"/>
+    <text name="LeaveTypes" value="Leave Types"/>
+    <text name="LeaveType" value="Leave Type"/>
+    <text name="LeaveTypesHeaderInfo" value="Manage Leave Types"/>
+    <text name="CreateLeaveType" value="Create Leave Type"/>
+    <text name="EditLeaveType" value="Edit Leave Type"/>
+    <text name="DeleteLeaveType" value="Delete Leave Type"/>
+    <text name="Entitlements" value="Entitlements"/>
+    <text name="IsEntitlementSituational" value="Is Entitlement Situational"/>
+    <text name="AddLeaveType" value="Add Leave Type"/>
+
+    <text name="EntitlementsHeaderInfo" value="Manage Leave Entitlement"/>
+    <text name="LeaveEntitlements" value="Leave Entitlements"/>
+    <text name="CreateEntitlement" value="Create Entitlement"/>
+    <text name="EditEntitlement" value="Edit Entitlement"/>
+    <text name="DeleteEntitlement" value="Delete Entitlement"/>
+    <text name="LeavePeriod" value="Leave Period"/>
+    <text name="EmployeeNumber" value="Employee Number"/>
+    <text name="Load" value="Load"/>
+    <text name="NumberOfDays" value="Number Of Days"/>
+    <text name="Subunit" value="Sub-unit"/>
+    <text name="From" value="From"/>
+    <text name="To" value="To"/>
+    <text name="EmployeeName" value="Employee Name"/>
+    
+    <text name="Timing" value="Timing"/>
+    <text name="Attendance" value="Attendance"/>
+    <text name="AttendanceReport" value="Attendance Report"/>
+    <text name="AttendanceHeaderInfo" value="Manage Attendance"/>
+    <text name="PunchIn" value="Punch In"/>
+    <text name="PunchOut" value="Punch Out"/>
+    <text name="DeleteAttendance" value="Delete Attendance"/>
+    <text name="ClockIn" value="Clock In"/>
+    <text name="ClockOut" value="Clock Out"/>
+    <text name="NewEntry" value="New Entry"/>
+    <text name="EnterAttendance" value="Enter Attendance"/>
+    <text name="EditAttendace" value="Edit Attendance"/>
+    <text name="HourIn" value="Hour In"/>
+    <text name="MuniteIn" value="Munite In"/>
+    <text name="HourOut" value="Hour Out"/>
+    <text name="MuniteOut" value="Munite Out"/>
+    <text name="Date" value="Date"/>
+    <text name="ViewALL" value="View All"/>
+    <text name="Create" value="Create"/>
+    
+    <text name="LeaveRequest" value="Leave Request"/>
+    <text name="ApproveLeaveRequest" value="Approve Leave Request"/>
+    <text name="RejectLeaveRequest" value="Reject Leave Request"/>
+    <text name="DeleteAnyLeaveRequest" value="Delete Any Leave Request"/>
+    <text name="ViewAllLeaveRequest" value="View All Leave Request"/>
+    <text name="RequestsHeaderInfo" value="Manage Leave Request"/>
+    <text name="MakeRequest" value="Make Request"/>
+    <text name="ViewAll" value="View All"/>
+    <text name="LeaveRequests" value="Leave Requests"/>
+    <text name="Note" value="Note"/>
+    <text name="ReportAttendance" value="Report Attendance"/>
+    
+    <text name="Performance" value="Performance"/>
+    <text name="KeyResultAreas" value="Key Result Areas"/>
+    <text name="KeyPerformanceIndicator" value="Performance Indicators"/>
+    <text name="Indicators" value="Indicators"/>
+    <text name="KeyPerformanceIndicatorHeaderInfo" value="Manage Key Performance Indicators"/>
+    <text name="KeyResultAreasHeaderInfo" value="Manage Key Result Areas"/>
+    <text name="KRA" value="KRA"/>
+    <text name="CreateKRA" value="Create KRA"/>
+    <text name="EditKRA" value="Edit KRA"/>
+    <text name="DeleteKRA" value="Delete KRA"/>
+    <text name="EditKPI" value="Edit KPI"/>
+    <text name="CreateKPI" value="Create KPI"/>
+    <text name="PerformanceRecord" value="Performance Record"/>
+    <text name="PerformanceReport" value="Performance Report"/>
+    <text name="MyPerformance" value="My Performance"/>
+    <text name="Title" value="Title"/>
+    <text name="KPI" value="KPI"/>
+    <text name="KPIRecords" value="KPI Records"/>
+    <text name="PerformanceRecordHeaderInfo" value="Manage Performance Record"/>
+    <text name="Period" value="Period"/>
+    <text name="NewKraRecord" value="New KRA Record"/>
+    
+    <text name="Rating" value="Rating"/>
+    <text name="ActualAchievement" value="Actual Achievement"/>
+    <text name="KeyResultArea" value="Key Result Area"/>
+    <text name="EditRecord" value="Edit Record"/>
+    <text name="AttendanceLog" value="Attendance Log"/>
+    <text name="Print" value="Print"/>
+    
+    
+    
+  </texts>
+</localizationDictionary>

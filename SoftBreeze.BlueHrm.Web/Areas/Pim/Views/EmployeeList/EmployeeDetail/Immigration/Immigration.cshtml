@@ -1,0 +1,129 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.PersonalInformation.Dto.Employees
+@using SoftBreeze.BlueHrm.Web.Areas.Pim.Controllers
+@using SoftBreeze.BlueHrm.Web.Navigation
+
+@{
+    ViewBag.CurrentPageName = PageNames.App.Pim.EmployeeList;
+    var employeee = (EmployeeDto)ViewBag.Employee;
+}
+
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Pim/Views/EmployeeList/EmployeeDetail/Immigration/Index.min.css")
+}
+@section Scripts
+{
+    <script>
+        app.currentEmployeeId = @employeee.Id;
+    </script>
+    @Html.IncludeScript("~/Areas/Pim/Views/EmployeeList/EmployeeDetail/Immigration/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Pim/Views/EmployeeList/EmployeeDetail/Immigration/Immigration.js")
+}
+
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Employees")</span> <small>@employeee.LastName @employeee.FirstName</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        <button id="CreateNewImmigrationButton" class="btn btn-primary blue">
+            <i class="fa fa-plus"></i>
+            @L("Add")
+        </button>
+    </div>
+</div>
+
+<div class="portlet light">
+    <div class="portlet-body">
+        <div id="SettingsTabPanel" class="tabbable-line">
+
+
+            <ul class="nav nav-tabs nav-tabs-items-to-new-page">
+
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.BasicSection})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("PersonalDetail")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Contacts})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Contacts")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.EmergencyContacts})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("EmergencyContacts")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Dependants})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Dependants")
+                    </a>
+                </li>
+                <li class="active">
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Immigration})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Immigration")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Job})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Job")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Salary})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Salary")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Supervisors})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Supervisors")
+                    </a>
+                </li>
+                <li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Qualifications})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Qualifications")
+                    </a>
+                </li>
+                @*<li>
+                    <a data-uri="@Url.Action("Detail", new {id = employeee.Number, section = EmployeeListController.Memberships})"
+                       data-toggle="tab" aria-expanded="false">
+                        @L("Memberships")
+                    </a>
+                </li>*@
+
+            </ul>
+
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="SettingsUserManagementTab">
+
+                    <div class="portlet light">
+                        <div class="portlet-body">
+                            <div id="ImmigrationTable"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

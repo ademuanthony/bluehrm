@@ -1,0 +1,60 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.Organisation.CreateOrEditLoationViewModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditLocation") + ": " + Model.Location.Name) : L("CreateLocation")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#LocationInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("Locations")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="LocationInformationsTab">
+
+                <form name="LocationInformationsForm" role="form" novalidate class="form-validation">
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Location.Id" />
+                    }
+                    
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.Location.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.Location.Name">
+                        <label>@L("Name")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.Location.City.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="City" value="@Model.Location.City">
+                        <label>@L("City")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.Location.ZipCode.IsNullOrEmpty() ? "" : " edited")" 
+                               type="text" name="ZipCode" value="@Model.Location.ZipCode">
+                        <label>@L("ZipCode")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input">
+                        @Html.DropDownListFor(m=>m.Location.CountryId, ViewBag.CountryId as SelectList, new {@class="form-control", Name= "CountryId" })
+                        <label>@L("Country")</label>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

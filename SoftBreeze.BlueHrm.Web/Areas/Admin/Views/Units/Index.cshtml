@@ -1,0 +1,38 @@
+﻿@using Abp.Web.Mvc.Extensions
+@using SoftBreeze.BlueHrm.Web.Navigation
+@using SoftBreeze.BlueHrm.Authorization
+@{
+    ViewBag.CurrentPageName = PageNames.App.Admin.Organisation.Units;
+}
+@section Styles
+{
+    @Html.IncludeStyle("~/Areas/Admin/Views/Units/Index.min.css")
+}
+@section Scripts
+{
+    @Html.IncludeScript("~/Areas/Admin/Views/Common/_PermissionTree.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/Units/_CreateOrEditModal.js")
+    @Html.IncludeScript("~/Areas/Admin/Views/Units/Index.js")
+}
+<div class="row margin-bottom-5">
+    <div class="col-xs-6">
+        <div class="page-head">
+            <div class="page-title">
+                <h1>
+                    <span>@L("Units")</span> <small>@L("UnitsHeaderInfo")</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 text-right">
+        @if (IsGranted(AppPermissions.Pages_Administration_Organisation_Locations_Create))
+        {
+            <button id="CreateNewUnitButton" class="btn btn-primary blue"><i class="fa fa-plus"></i> @L("CreateUnit")</button>
+        }
+    </div>
+</div>
+<div class="portlet light">
+    <div class="portlet-body">
+        <div id="UnitsTable"></div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Pim.Models.CreateOrEditDependantModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditDependant") + ": " + Model.Dependant.Name)
+    : L("CreateDependant")))
+
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#JobInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("Dependant")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobInformationsTab">
+
+                <form name="DepaendatDataformationsForm" role="form" novalidate class="form-validation">
+                    <input type="hidden" name="EmployeeId" value="@ViewBag.EmployeeId"/>
+
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.Dependant.Id"/>
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.Dependant.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.Dependant.Name" required="">
+                        <label>@L("Name")</label>
+                    </div>
+
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <select name="Relationship" class="form-control edited">
+                            <option value="@RelationshipType.Child" @(Model.Dependant.Relationship == RelationshipType.Child ? "selected" : "")>Child</option>
+                            <option value="@RelationshipType.Others" @(Model.Dependant.Relationship == RelationshipType.Others ? "selected" : "")>Others</option>
+                        </select>
+                        <label>@L("Relationship")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control edited"
+                               type="date" name="DateOfBirth" value="@Model.Dependant.DateOfBirth.ToShortDateString()">
+                        <label>@L("DateOfBirth")</label>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")

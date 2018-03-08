@@ -1,0 +1,43 @@
+﻿@using Abp.Extensions
+@using SoftBreeze.BlueHrm.Web.Areas.Mpa.Models.Common.Modals
+@using SoftBreeze.BlueHrm.Authorization.Roles
+@model SoftBreeze.BlueHrm.Web.Areas.Admin.Models.JobConfiguration.CreateOrEditJobCategoryViewModel
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalHeader.cshtml",
+    new ModalHeaderViewModel(Model.IsEditMode ? (L("EditEmployeeStatus") + ": " + Model.JobCategory.Name) : L("CreateNewJobCategory")))
+<div class="modal-body">
+    <div class="tabbable-line">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a href="#JobCategoryInformationsTab" data-toggle="tab" aria-expanded="true">
+                    @L("JobCategoryInformation")
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="JobCategoryInformationsTab">
+                <form name="JobCategoryInformationsForm" role="form" novalidate class="form-validation">
+                    @if (Model.IsEditMode)
+                    {
+                        <input type="hidden" name="Id" value="@Model.JobCategory.Id" />
+                    }
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <input class="form-control@(Model.JobCategory.Name.IsNullOrEmpty() ? "" : " edited")"
+                               type="text" name="Name" value="@Model.JobCategory.Name">
+                        <label>@L("Name")</label>
+                    </div>
+
+                    <div class="form-group form-md-line-input form-md-floating-label">
+                        <textarea class="form-control@(Model.JobCategory.Description.IsNullOrEmpty() ? "" : " edited")"
+                                  name="Description">
+                            @Model.JobCategory.Description
+                        </textarea>
+                        <label>@L("Description")</label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Areas/Admin/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
